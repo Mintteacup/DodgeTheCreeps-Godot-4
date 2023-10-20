@@ -31,3 +31,12 @@ func show_game_over():
 	# Make a one-shot timer and wait for it to finish.
 	await get_tree().create_timer(1.0).timeout
 	$StartButton.show()
+
+
+func _on_message_timer_timeout():
+	$StartButton.hide()
+	start_game.emit()
+
+
+func _on_start_button_pressed():
+	$Message.hide()
